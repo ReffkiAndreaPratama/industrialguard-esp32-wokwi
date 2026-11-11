@@ -1,0 +1,414 @@
+{
+  "version": 1,
+  "author": "IndustrialGuard Professional",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -150,
+      "left": 230,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "vib",
+      "top": 10,
+      "left": 260,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "current",
+      "top": 145,
+      "left": 260,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "rpm",
+      "top": 280,
+      "left": 260,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": -190,
+      "left": -235,
+      "attrs": {
+        "i2cAddress": "0x3c"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": -120,
+      "left": -310,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "yellow",
+      "top": -45,
+      "left": -310,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": 30,
+      "left": -310,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rg",
+      "top": -120,
+      "left": -390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "ry",
+      "top": -45,
+      "left": -390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rr",
+      "top": 30,
+      "left": -390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 155,
+      "left": -280,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 270,
+      "left": -210,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "mute",
+      "top": 385,
+      "left": -140,
+      "attrs": {
+        "label": "MUTE",
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "mode",
+      "top": 385,
+      "left": -25,
+      "attrs": {
+        "label": "MODE",
+        "color": "green"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:3V3",
+      "dht:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "dht:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:4",
+      "dht:SDA",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "vib:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "vib:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:34",
+      "vib:SIG",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "current:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "current:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:35",
+      "current:SIG",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "rpm:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "rpm:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:32",
+      "rpm:SIG",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:21",
+      "oled:SDA",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:22",
+      "oled:SCL",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "oled:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "oled:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:25",
+      "green:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "green:C",
+      "rg:1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "rg:2",
+      "esp:GND.1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:26",
+      "yellow:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "yellow:C",
+      "ry:1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "ry:2",
+      "esp:GND.1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:27",
+      "red:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "red:C",
+      "rr:1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "rr:2",
+      "esp:GND.1",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:19",
+      "buzz:2",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "buzz:1",
+      "esp:GND.2",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:18",
+      "relay:IN",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:5V",
+      "relay:VCC",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "relay:GND",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:23",
+      "mute:1.l",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "mute:2.l",
+      "esp:GND.2",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "esp:13",
+      "mode:1.l",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "mode:2.l",
+      "esp:GND.2",
+      "green",
+      [
+        "h0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
